@@ -80,7 +80,7 @@ server {
 }
 ```
 
-Dentro do "contexto" `location`, você serve o arquivo principal `index.html` por meio de uma diretiva chamada `try_files`. Adicione a diretiva e após isso salve o arquivo:
+Dentro do "contexto" `location`, você serve o arquivo principal `index.html` por meio da diretiva `try_files`. Adicione a diretiva e após isso salve o arquivo:
 
 ```nginx
 location / {
@@ -88,6 +88,9 @@ location / {
     try_files $uri $uri/ /index.html;
 }
 ```
+
+> [!IMPORTANT]
+Ajuste o caminho do root conforme necessário. O caminho `/app/dist` é apenas um exemplo. Você deve substituir pelo caminho real onde se encontra o diretório `dist` do seu projeto. Exemplos comuns incluem `/home/usuario/meu-app-react/dist` ou `/var/www/meu-app/dist`.
 
 Para verificar se a diretiva foi adicionada corretamente, utilize o comando `nginx -t`. Se tudo correr bem, veremos as seguintes mensagens no terminal:
 
